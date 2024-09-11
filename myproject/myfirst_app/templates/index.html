@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Home Page</title>
+    {% load static %}
+    <link rel="stylesheet" href="{% static 'myfirst_app/css/styles.css' %}">
+
+</head>
+<body>
+    <header>
+        <nav>
+            <ul>
+                <li><a href="{% url 'home' %}">Home</a></li>
+                <li><a href="{% url 'admin:index' %}">Admin</a></li>
+                <li><a href="{% url 'hi' %}">Hi Page!</a></li>
+        </nav>
+    </header>
+
+    <main>
+        <section>
+            <h1>Welcome to our Home Page</h1>
+            <p>This is the main page of our website. Feel free to explore the content.</p>
+        </section>
+
+        <section>
+            <h2>Features</h2>
+            <ul>
+                <li>Feature 1: Fast and responsive design.</li>
+                <li>Feature 2: Easy to navigate interface.</li>
+                <li>Feature 3: Mobile-friendly layout.</li>
+            </ul>
+        </section>
+    </main>
+
+    <footer>
+    </footer>
+</body>
+</html>

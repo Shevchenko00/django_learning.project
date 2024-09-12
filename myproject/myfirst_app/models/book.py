@@ -26,11 +26,16 @@ class Book(models.Model):
         choices=GENRE_CHOICES,
         default='no genre'  # Update default to one of the choices
     )
-    themes = models.CharField(unique_for_date='published_date', max_length=100, default='No themes')
-    description = models.TextField(max_length=500, null=True)
+    themes = models.CharField(unique_for_date='published_date',
+                              max_length=100,
+                              default='No themes')
+    description = models.TextField(max_length=500,
+                                   null=True)
     net_worth = models.BigIntegerField(null=True)
     positive_review = models.PositiveIntegerField(null=True)
-    rating = models.DecimalField(max_digits=5, decimal_places=2, null=True)
+    rating = models.DecimalField(max_digits=5,
+                                 decimal_places=2,
+                                 null=True)
 
 
 class Author(models.Model):
@@ -44,9 +49,14 @@ class Author(models.Model):
     net_worth = models.BigIntegerField(null=True)
     positive_review = models.PositiveIntegerField(null=True)
     rating = models.DecimalField(max_digits=10,
-                                 decimal_places=3, null=True)
-    last_updated = models.DateField(auto_now=True, null=True)
-    created_at = models.DateTimeField(auto_now_add=True, null=True, help_text='Время создания записи')
-    duration = models.DurationField(null=True)
+                                 decimal_places=3,
+                                 null=True)
+    # last_updated = models.DateField(auto_now=True,
+    #                                 null=True)
+    # created_at = models.DateTimeField(auto_now_add=True,
+    #                                   null=True,
+    #                                   help_text='Время создания записи')
+    # duration = models.DurationField(null=True)
     # upload_file = models.FileField(upload_to="postert/", help_text='Загрузите постер фильма')
-    enter_time = models.TimeField(null=True, auto_now=True)
+    # enter_time = models.TimeField(null=True,
+    #                               auto_now=True)

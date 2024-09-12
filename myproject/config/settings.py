@@ -14,6 +14,8 @@ import environ
 from pathlib import Path
 import os
 
+from django.conf.global_settings import MEDIA_ROOT
+
 env = environ.Env()
 
 # Чтение .env файла
@@ -149,3 +151,4 @@ STATIC_ROOT = BASE_DIR / 'staticfiles'  # Необязательно, но по�
 # https://docs.djangoproject.com/en/5.1/ref/settings/#default-auto-field
 
 DEFAULT_AUTO_FIELD = 'django.db.models.BigAutoField'
+MEDIA_ROOT = BASE_DIR / 'media'

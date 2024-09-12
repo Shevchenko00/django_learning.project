@@ -19,3 +19,7 @@ def hi(request):
 
 def see_page(request: HttpRequest) -> HttpResponse:
     return render(request, 'main.html')
+
+
+def learn_more_page(request: HttpRequest) -> HttpResponse:
+    return render(request, 'learn_more_page.html')

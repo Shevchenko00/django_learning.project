@@ -18,11 +18,8 @@ Including another URLconf
 from django.contrib import admin
 from django.urls import path, include
 
-
-
 urlpatterns = [
     path('admin/', admin.site.urls),
     path('', include('myfirst_app.urls')),
     path('hi/', include('myfirst_app.urls')),
-    path('see/', include('myfirst_app.urls'))# Подключение маршрутов приложения
-]
+    path('see/', include('myfirst_app.urls'))]

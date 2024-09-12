@@ -6,15 +6,16 @@
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
     <title>Home Page</title>
     {% load static %}
-    <link rel="stylesheet" href="{% static 'myfirst_app/css/hi.css' %}">
+    <link rel="stylesheet" href="{% static 'myfirst_app/css/styles.css' %}">
 </head>
 <body>
     <header>
         <nav>
             <ul>
                 <li><a href="{% url 'home' %}">Home</a></li>
-                <li><a href="{% url 'hi' %}">Hi</a></li>
+                <li><a href="{% url 'hi' %}">Hi Page!</a></li>
                 <li><a href="{% url 'admin:index' %}">Admin</a></li>
+                <li><a href="{% url 'learn_more' %}">Learn More</a></li>
             </ul>
         </nav>
     </header>
@@ -37,12 +38,11 @@
         <section class="cta">
             <h2>Get Started</h2>
             <p>Ready to dive in? Explore our features and see how we can help you achieve your goals.</p>
-            <a href="{% url 'hi' %}" class="cta-button">Learn More</a>
+            <a href="{% url 'learn_more' %}" class="cta-button">Learn More</a>
         </section>
     </main>
 
     <footer>
-        <p>&copy; 2024 Ich School. All rights reserved.</p>
     </footer>
 </body>
 </html>

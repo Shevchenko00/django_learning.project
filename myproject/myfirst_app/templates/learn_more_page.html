@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Learn More</title>
+    {% load static %}
+    <link rel="stylesheet" href="{% static 'myfirst_app/css/styles.css' %}">
+</head>
+<body>
+<header>
+    <nav>
+        <ul>
+            <li><a href="{% url 'home' %}">Home</a></li>
+            <li><a href="{% url 'admin:index' %}">Admin</a></li>
+            <li><a href="{% url 'hi' %}">Hi Page!</a></li>
+            <li><a href="{% url 'learn_more' %}">Learn More</a></li>
+        </ul>
+    </nav>
+</header>
+
+<main>
+    <section>
+        <h1>Learn More About Our Services</h1>
+        <p>On this page, you'll find detailed information about the features and services we provide.</p>
+    </section>
+
+    <section>
+        <h2>Our Mission</h2>
+        <p>Our mission is to deliver the best service with a focus on efficiency and innovation.</p>
+    </section>
+
+    <section>
+        <h2>Why Choose Us?</h2>
+        <ul>
+            <li>Highly skilled team of professionals.</li>
+            <li>Customer satisfaction is our priority.</li>
+            <li>We provide cutting-edge solutions to complex problems.</li>
+        </ul>
+    </section>
+
+    <section>
+    </section>
+</main>
+
+<footer>
+</footer>
+</body>
+</html>

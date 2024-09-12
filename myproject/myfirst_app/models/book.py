@@ -36,7 +36,7 @@ class Book(models.Model):
     rating = models.DecimalField(max_digits=5,
                                  decimal_places=2,
                                  null=True)
-
+#
 
 class Author(models.Model):
     name = models.CharField(primary_key=True, max_length=100,
@@ -51,12 +51,12 @@ class Author(models.Model):
     rating = models.DecimalField(max_digits=10,
                                  decimal_places=3,
                                  null=True)
-    # last_updated = models.DateField(auto_now=True,
-    #                                 null=True)
-    # created_at = models.DateTimeField(auto_now_add=True,
-    #                                   null=True,
-    #                                   help_text='Время создания записи')
-    # duration = models.DurationField(null=True)
+    last_updated = models.DateField(auto_now=True,
+                                    null=True)
+    created_at = models.DateTimeField(auto_now_add=True,
+                                      null=True,
+                                      help_text='Время создания записи')
+    duration = models.DurationField(null=True)
     # upload_file = models.FileField(upload_to="postert/", help_text='Загрузите постер фильма')
-    # enter_time = models.TimeField(null=True,
-    #                               auto_now=True)
+    enter_time = models.TimeField(null=True,
+                                  auto_now=True)

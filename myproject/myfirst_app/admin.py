@@ -1,7 +1,7 @@
 from django.contrib import admin
 from .models.book import Book, Author
 from .models.movie import Director, Movie
-
+# from .models.task import Book2, Author
 
 
 admin.site.register(Movie)

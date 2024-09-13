@@ -36,6 +36,8 @@ class Book(models.Model):
     rating = models.DecimalField(max_digits=5,
                                  decimal_places=2,
                                  null=True)
+
+
 #
 
 class Author(models.Model):

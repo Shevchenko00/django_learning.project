@@ -8,6 +8,7 @@ class Director(models.Model):
         return self.name
 
 
+
 class Movie(models.Model):
     title = models.CharField(max_length=100, verbose_name='Movie Title')
     directors = models.ForeignKey(Director, on_delete=models.DO_NOTHING, related_name='movies', null=True, blank=True)

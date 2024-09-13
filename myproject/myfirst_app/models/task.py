@@ -1,21 +1,39 @@
-# from django.core.validators import MinValueValidator, MaxValueValidator
-# from django.db import models
-# from datetime import date
-#
-#
-# from django.db import models
-# from datetime import date
-#
-# class Author(models.Model):
-#     name = models.CharField(max_length=100)
-#     last_name = models.CharField(max_length=100)
-#     birst_day = models.DateField(null=True, default=date.today)
-#     profile = models.URLField(null=True, blank=True)
-#     deleted = models.BooleanField(default=False, verbose_name="Удален")
-#     rating = models.FloatField(null=True, validators=[MinValueValidator(1), MaxValueValidator(10)])
-#
-#
-# class Book2(models.Model):
-#     name = models.CharField(max_length=20)
-#     author = models.ForeignKey(Author ,on_delete=models.DO_NOTHING, related_name='book2')
-#     published_data = models.DateField()
+from django.db import models
+from django.db.models import ManyToManyField, DateField
+from datetime import datetime
+
+
+class Category(models.Model):
+    description = models.CharField(max_length=100)
+    name = models.CharField(max_length=100)
+
+
+class Task(models.Model):
+    description = models.CharField(max_length=100, verbose_name='Описание задачи')
+    title = models.CharField(max_length=100, unique_for_date='title', verbose_name='Название задачи')
+    categories = models.ManyToManyField(Category)
+    STATUS_CHOICE = [
+        ('New', 'New'),
+        ('In Progress', 'In Progress'),
+        ('Pending', 'Pending'),
+        ('Blocked', 'Blocked'),
+        ('Done', 'Done'),
+    ]
+    Blocked = models.CharField(max_length=100, choices=STATUS_CHOICE)
+    deadline = DateField(max_length=100, default=datetime.today)
+    created_at = DateField(max_length=100, auto_now_add=True)
+
+
+class SubTask(models.Model):
+    description = models.CharField(max_length=100, verbose_name='Отдельная часть основной задачи (Task)')
+    task = models.ForeignKey(Task, on_delete=models.CASCADE)
+    STATUS_CHOICE = [
+        ('New', 'New'),
+        ('In Progress', 'In Progress'),
+        ('Pending', 'Pending'),
+        ('Blocked', 'Blocked'),
+        ('Done', 'Done'),
+    ]
+    status = models.CharField(max_length=100, choices=STATUS_CHOICE)
+    deadline = DateField(default=datetime.today)
+    created_at = DateField(auto_now_add=True)
